@@ -44,3 +44,5 @@ overall_median_year <- median(data$Year)
 data$Year[is.na(data$Year)] <- overall_median_year
 # Verify that there are no missing 'Year' values after imputation
 print(paste("Number of missing values in 'Year' column:", sum(is.na(data$Year))))
+
+write.csv(data, here("data", "cleaned_sentiments.csv"))

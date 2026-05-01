@@ -1,3 +1,9 @@
+library(readr)
+library(here)
+library(dplyr)
+library(ggplot2)
+data <- read_csv(here("data", "cleaned_sentiments.csv"))
+
 # Ensure the AI tool columns are numeric
 ai_tool_columns <- c("ChatGPT", "Dalle", "ChatSonic", "Claude", "Bard.AI", "LaMDA", "Jasper.chat", "Socratic", "Bing.AI", "Other")
 data[ai_tool_columns] <- lapply(data[ai_tool_columns], as.numeric)
